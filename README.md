@@ -129,13 +129,13 @@ Asynchronous API
 ```java
 StatefulRedisConnection<String, String> connection = client.connect();
 RedisStringAsyncCommands<String, String> async = connection.async();
-RedisFuture<String> set = async.set("key", "value")
-RedisFuture<String> get = async.get("key")
+RedisFuture<String> set = async.set("key", "value");
+RedisFuture<String> get = async.get("key");
 
-async.awaitAll(set, get) == true
+async.awaitAll(set, get) == true;
 
-set.get() == "OK"
-get.get() == "value"
+set.get() == "OK";
+get.get() == "value";
 ```
 
 See [Asynchronous API](https://github.com/mp911de/lettuce/wiki/Asynchronous-API-%284.0%29) for further details.
